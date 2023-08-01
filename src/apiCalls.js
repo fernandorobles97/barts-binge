@@ -8,7 +8,7 @@ const handleError = (response) => {
 const getAllEpisodes = async() => {
   let response = await fetch('https://api.sampleapis.com/simpsons/episodes')
   let data = await handleError(response)
-  console.log(data)
+  return data
 }
 
 export {getAllEpisodes}
