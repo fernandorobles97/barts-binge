@@ -21,15 +21,14 @@ function App() {
     } 
     apiCall()
   }, [])
-  console.log('sodes',episodes)
-  
+
   return (
     <main>
       <div className='logo-container'>
         <img src={logo} alt='Barts Binge logo' />
       </div>
       <Routes>
-        <Route path='/' element={<EpisodesContainer />} />
+        <Route path='/' element={<EpisodesContainer allEpisodes={episodes} />} />
         <Route path='/allepisodes' element={<EpisodesContainer />} />
         <Route path='/episode/:id' element={<EpisodeDetails />} />
         <Route path='/allepisodes/*' element={<EmptyState />} />
