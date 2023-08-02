@@ -10,14 +10,18 @@ import EmptyState from '../EmptyState/EmptyState';
 function App() {
   const [episodes, setEpisodes] = useState([])
   const[error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const apiCall = async () => {
+      setLoading(true)
       try {
         setEpisodes(await getAllEpisodes())
+        setLoading(false)
       }catch(error) {
         setError(error)
       }
+      setLoading(false)
     } 
     apiCall()
   }, [])
@@ -28,7 +32,7 @@ function App() {
         <img src={logo} alt='Barts Binge logo' />
       </div>
       <Routes>
-        <Route path='/' element={<EpisodesContainer allEpisodes={episodes} />} />
+        <Route path='/' element={loading ? <EmptyState/> : <EpisodesContainer allEpisodes={episodes} />} />
         <Route path='/allepisodes' element={<EpisodesContainer />} />
         <Route path='/episode/:id' element={<EpisodeDetails />} />
         <Route path='/allepisodes/*' element={<EmptyState />} />
