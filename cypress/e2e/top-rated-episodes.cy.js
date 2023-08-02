@@ -20,4 +20,11 @@ describe('top rated episodes spec', () => {
       })
     })
   })
+
+  it('should display more random episodes with ratings greater than or equal to 8 after the Reroll Episodes button is clicked', () => {
+    cy.wait('@getEpisodes').then((interception) => {
+      cy.get('.reroll-button').click()
+    })
+  })
+
 })
