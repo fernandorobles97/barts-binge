@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './EpisodesContainer.css'
+import EpisodeCard from '../EpisodeCard/EpisodeCard'
+import PropTypes from 'prop-types'
 
 const EpisodesContainer = ({allEpisodes}) => {
   const [topRatedEpisodes, setTopRatedEpisodes] = useState([])
@@ -27,14 +29,34 @@ const EpisodesContainer = ({allEpisodes}) => {
     randomEpisodes.push(singleRandomEpisode)
   } 
 
+  const topRatedCards = topRatedEpisodes.map(episode => {
+    return (
+      <EpisodeCard 
+        key={episode.id}
+        id={episode.id}
+        season={episode.season}
+        episode={episode.episode}
+        name={episode.name}
+        rating={episode.rating}
+        description={episode.description}
+        airDate={episode.airDate}
+        thumbnailUrl={episode.thumbnailUrl}
+      />
+    )
+  })
+
   return (
     <div className='episodes-container'>
       <button className='view-all-button'>View All Episodes</button>
       <h2>Top Rated Episodes</h2>
-        {/* {episodes here} */}
+        {topRatedCards.length === 3 && topRatedCards}
       <button className='reroll-button'>Reroll Episodes</button>
     </div>
   )
 }
 
 export default EpisodesContainer
+
+EpisodesContainer.propTypes = {
+  allEpisodes: PropTypes.array
+}
