@@ -1,0 +1,22 @@
+.episode-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 2px solid #e8e81e;
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  color: black;
+  text-decoration: none;
+  /* margin-right: 25px; */
+}
+
+p {
+  margin: 0;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+}
