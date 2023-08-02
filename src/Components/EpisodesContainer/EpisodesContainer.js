@@ -8,13 +8,15 @@ const EpisodesContainer = ({allEpisodes}) => {
   const randomEpisodes = []
 
   useEffect(() => {
-    updateTopRatedEpisodes()
+    if (allEpisodes.length) {
+      updateTopRatedEpisodes()
+    }
   }, [allEpisodes])
 
   const updateTopRatedEpisodes = () => {
     const topRated = allEpisodes.filter(episode => episode.rating >= 8)
 
-    getRandomEpisodes(topRated)
+    getRandomEpisode(topRated)
     if (randomEpisodes.length === 3) {
       setTopRatedEpisodes(randomEpisodes)
     }
@@ -24,9 +26,12 @@ const EpisodesContainer = ({allEpisodes}) => {
     }
   }
 
-  const getRandomEpisodes = (episodes) => {
+  const getRandomEpisode = (episodes) => {
     const singleRandomEpisode = episodes[Math.floor(Math.random()*episodes.length)]
-    randomEpisodes.push(singleRandomEpisode)
+    const duplicateEpisode = randomEpisodes.find(episode => episode.id === singleRandomEpisode.id)
+    if (!duplicateEpisode) {
+      randomEpisodes.push(singleRandomEpisode)
+    }
   } 
 
   const topRatedCards = topRatedEpisodes.map(episode => {
