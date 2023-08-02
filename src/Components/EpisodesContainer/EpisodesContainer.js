@@ -8,11 +8,11 @@ const EpisodesContainer = ({allEpisodes}) => {
   const randomEpisodes = []
 
   useEffect(() => {
-    updateTopRatedEpisodes(allEpisodes)
+    updateTopRatedEpisodes()
   }, [allEpisodes])
 
-  const updateTopRatedEpisodes = (episodes) => {
-    const topRated = episodes.filter(episode => episode.rating >= 8)
+  const updateTopRatedEpisodes = () => {
+    const topRated = allEpisodes.filter(episode => episode.rating >= 8)
 
     getRandomEpisodes(topRated)
     if (randomEpisodes.length === 3) {
@@ -20,7 +20,7 @@ const EpisodesContainer = ({allEpisodes}) => {
     }
 
     if (randomEpisodes.length < 3) {
-      updateTopRatedEpisodes(episodes)
+      updateTopRatedEpisodes(allEpisodes)
     }
   }
 
@@ -50,7 +50,7 @@ const EpisodesContainer = ({allEpisodes}) => {
       <button className='view-all-button'>View All Episodes</button>
       <h2>Top Rated Episodes</h2>
         {topRatedCards.length === 3 && topRatedCards}
-      <button className='reroll-button'>Reroll Episodes</button>
+      <button className='reroll-button' onClick={updateTopRatedEpisodes} >Reroll Episodes</button>
     </div>
   )
 }
