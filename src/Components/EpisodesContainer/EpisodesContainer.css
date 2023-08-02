@@ -22,8 +22,8 @@
 
 .view-all-button, .reroll-button {
   background-color: rgb(250, 245, 158);
-  height: 7vh;
-  width: 12vw;
+  /* height: 7vh;
+  width: 12vw; */
   cursor: pointer;
   border-radius: 8px;
 }

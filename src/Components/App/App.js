@@ -9,7 +9,7 @@ import EmptyState from '../EmptyState/EmptyState';
 
 function App() {
   const [episodes, setEpisodes] = useState([])
-  const[error, setError] = useState(null)
+  const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {

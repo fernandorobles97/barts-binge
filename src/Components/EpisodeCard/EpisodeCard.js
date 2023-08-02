@@ -11,7 +11,7 @@ const EpisodeCard = ({ id, season, episode, name, rating, thumbnailUrl, }) => {
       <div className='card-details'>  
         <p>Season: {season}</p>
         <p>Episode: {episode}</p>
-        <p>Rating: {rating}</p>
+        <p className='episode-rating'>Rating: {rating}</p>
       </div>
     </Link>
   )
