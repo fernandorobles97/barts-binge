@@ -49,7 +49,9 @@ const EpisodesContainer = ({allEpisodes}) => {
     <div className='episodes-container'>
       <button className='view-all-button'>View All Episodes</button>
       <h2>Top Rated Episodes</h2>
+      <div className='episodes-wrapper'>
         {topRatedCards.length === 3 && topRatedCards}
+      </div>
       <button className='reroll-button' onClick={updateTopRatedEpisodes} >Reroll Episodes</button>
     </div>
   )

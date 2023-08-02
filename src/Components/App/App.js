@@ -29,7 +29,7 @@ function App() {
   return (
     <main>
       <div className='logo-container'>
-        <img src={logo} alt='Barts Binge logo' />
+        <img className='barts-logo' src={logo} alt='Barts Binge logo' />
       </div>
       <Routes>
         <Route path='/' element={loading ? <EmptyState/> : <EpisodesContainer allEpisodes={episodes} />} />
