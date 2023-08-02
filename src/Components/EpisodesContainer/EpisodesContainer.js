@@ -52,12 +52,14 @@ const EpisodesContainer = ({allEpisodes}) => {
 
   return (
     <div className='episodes-container'>
-      <button className='view-all-button'>View All Episodes</button>
-      <h2>Top Rated Episodes</h2>
+      <div className='buttons-header-wrapper'>
+        <button className='view-all-button'>View All Episodes</button>
+        <h2 className='container-header'>Top Rated Episodes</h2>
+        <button className='reroll-button' onClick={updateTopRatedEpisodes} >Reroll Episodes</button>
+      </div>
       <div className='episodes-wrapper'>
         {topRatedCards.length === 3 && topRatedCards}
       </div>
-      <button className='reroll-button' onClick={updateTopRatedEpisodes} >Reroll Episodes</button>
     </div>
   )
 }
