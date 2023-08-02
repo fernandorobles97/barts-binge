@@ -1,13 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './EpisodesContainer.css'
 
-const EpisodesContainer = (props) => {
+const EpisodesContainer = ({allEpisodes}) => {
   const [topRatedEpisodes, setTopRatedEpisodes] = useState([])
+  const randomEpisodes = []
 
-  const getTopRatedEpisodes = () => {
-    const topRated = props.allEpisodes.filter(episode => episode.rating >= 8)
-    setTopRatedEpisodes(topRated)
+  useEffect(() => {
+    updateTopRatedEpisodes(allEpisodes)
+  }, [allEpisodes])
+
+  const updateTopRatedEpisodes = (episodes) => {
+    const topRated = episodes.filter(episode => episode.rating >= 8)
+
+    getRandomEpisodes(topRated)
+    if (randomEpisodes.length === 3) {
+      setTopRatedEpisodes(randomEpisodes)
+    }
+
+    if (randomEpisodes.length < 3) {
+      updateTopRatedEpisodes(episodes)
+    }
   }
+
+  const getRandomEpisodes = (episodes) => {
+    const singleRandomEpisode = episodes[Math.floor(Math.random()*episodes.length)]
+    randomEpisodes.push(singleRandomEpisode)
+  } 
 
   return (
     <div className='episodes-container'>
