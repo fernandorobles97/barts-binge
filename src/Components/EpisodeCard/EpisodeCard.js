@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const EpisodeCard = ({ id, season, episode, name, rating, thumbnailUrl, }) => {
   return (
-    <Link to={`episode/${id}`} className='episode-card'>
+    <Link to={`/episode/${id}`} className='episode-card'>
       <img src={thumbnailUrl} alt={`${name} thumbnail`} />
       <h3>{name}</h3>
       <div className='card-details'>  
