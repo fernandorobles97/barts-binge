@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import './EpisodesContainer.css'
-import EpisodeCard from '../EpisodeCard/EpisodeCard'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { mapCards } from '../../helpers'
 
-const EpisodesContainer = ({allEpisodes}) => {
+const TopEpisodesContainer = ({allEpisodes}) => {
   const [topRatedEpisodes, setTopRatedEpisodes] = useState([])
   const randomEpisodes = []
 
@@ -11,7 +12,7 @@ const EpisodesContainer = ({allEpisodes}) => {
     if (allEpisodes.length) {
       updateTopRatedEpisodes()
     }
-  }, [allEpisodes])
+  }, [])
 
   const updateTopRatedEpisodes = () => {
     const topRated = allEpisodes.filter(episode => episode.rating >= 8)
@@ -19,6 +20,10 @@ const EpisodesContainer = ({allEpisodes}) => {
     getRandomEpisode(topRated)
     if (randomEpisodes.length === 3) {
       setTopRatedEpisodes(randomEpisodes)
+    }
+
+    if(randomEpisodes.length > 3) {
+      randomEpisodes.pop()
     }
 
     if (randomEpisodes.length < 3) {
@@ -34,38 +39,25 @@ const EpisodesContainer = ({allEpisodes}) => {
     }
   } 
 
-  const topRatedCards = topRatedEpisodes.map(episode => {
-    return (
-      <EpisodeCard 
-        key={episode.id}
-        id={episode.id}
-        season={episode.season}
-        episode={episode.episode}
-        name={episode.name}
-        rating={episode.rating}
-        description={episode.description}
-        airDate={episode.airDate}
-        thumbnailUrl={episode.thumbnailUrl}
-      />
-    )
-  })
+  const topRatedCards= mapCards(topRatedEpisodes)
+
 
   return (
     <div className='episodes-container'>
       <div className='buttons-header-wrapper'>
-        <button className='view-all-button'>View All Episodes</button>
+        <Link className='view-all-button' to='/allepisodes' >View All Episodes</Link>
         <h2 className='container-header'>Top Rated Episodes</h2>
         <button className='reroll-button' onClick={updateTopRatedEpisodes} >Reroll Episodes</button>
       </div>
       <div className='episodes-wrapper'>
-        {topRatedCards.length === 3 && topRatedCards}
+        {topRatedCards}
       </div>
     </div>
   )
 }
 
-export default EpisodesContainer
+export default TopEpisodesContainer
 
-EpisodesContainer.propTypes = {
+TopEpisodesContainer.propTypes = {
   allEpisodes: PropTypes.array
 }

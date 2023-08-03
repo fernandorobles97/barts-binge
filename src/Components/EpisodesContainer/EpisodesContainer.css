@@ -20,12 +20,13 @@
   font-weight: bold;
 }
 
-.view-all-button, .reroll-button {
+.view-all-button, .reroll-button, .filter-seasons {
   background-color: rgb(250, 245, 158);
-  /* height: 7vh;
-  width: 12vw; */
   cursor: pointer;
+  border: 2px solid black;
   border-radius: 8px;
+  text-decoration: none;
+  color: black;
 }
 
 .buttons-header-wrapper {
