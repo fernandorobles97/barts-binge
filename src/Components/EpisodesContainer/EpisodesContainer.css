@@ -25,7 +25,10 @@
   /* height: 7vh;
   width: 12vw; */
   cursor: pointer;
+  border: 2px solid black;
   border-radius: 8px;
+  text-decoration: none;
+  color: black;
 }
 
 .buttons-header-wrapper {
