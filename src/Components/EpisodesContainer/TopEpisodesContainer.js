@@ -3,6 +3,7 @@ import './EpisodesContainer.css'
 import EpisodeCard from '../EpisodeCard/EpisodeCard'
 import PropTypes from 'prop-types'
 import { Link, useLocation } from 'react-router-dom'
+import { mapCards } from '../../helpers'
 
 const TopEpisodesContainer = ({allEpisodes}) => {
   const [topRatedEpisodes, setTopRatedEpisodes] = useState([])
@@ -39,28 +40,8 @@ const TopEpisodesContainer = ({allEpisodes}) => {
     }
   } 
 
-  const mapCards = (episodes) => {
-    return episodes.map(episode => {
-      return (
-        <EpisodeCard 
-          key={episode.id}
-          id={episode.id}
-          season={episode.season}
-          episode={episode.episode}
-          name={episode.name}
-          rating={episode.rating}
-          description={episode.description}
-          airDate={episode.airDate}
-          thumbnailUrl={episode.thumbnailUrl}
-        />
-      )
-    })
-  } 
-
-  const allEpisodeCards = mapCards(allEpisodes)
   const topRatedCards= mapCards(topRatedEpisodes)
 
-  console.log('here1', allEpisodeCards)
 
   return (
     <div className='episodes-container'>
