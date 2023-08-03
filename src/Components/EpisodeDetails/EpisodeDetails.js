@@ -8,14 +8,11 @@ const EpisodeDetails = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const location = useLocation().pathname.split('/episode/')[1]
-  const episodeLocation = parseInt(location)
-  console.log(episodeLocation)
 
   useEffect(() => {
     const apiCall = async () => {
-      // setLoading(true)
       try {
-        setCurrentEpisode(await getSingleEpisode(episodeLocation))
+        setCurrentEpisode(await getSingleEpisode(location))
         setLoading(false)
       }catch(error) {
         setError(error)
@@ -24,7 +21,6 @@ const EpisodeDetails = () => {
     } 
     apiCall()
   }, [])
-  console.log(currentEpisode)
 
   return(  
     <div className="episode-content">
