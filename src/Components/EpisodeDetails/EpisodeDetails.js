@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { getSingleEpisode } from "../../apiCalls"
 
 const EpisodeDetails = () => {
@@ -29,6 +29,7 @@ const EpisodeDetails = () => {
     <main>
       <div className='buttons-header-wrapper'>
         <h2 className='container-header'>{currentEpisode.name}</h2>
+        <Link className='view-all-button' to='/allepisodes' >Back To All Episodes</Link>
       </div>
     </main>
   )
