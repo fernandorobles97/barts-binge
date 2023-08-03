@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import './EpisodesContainer.css'
-import EpisodeCard from '../EpisodeCard/EpisodeCard'
 import PropTypes from 'prop-types'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { mapCards } from '../../helpers'
 
 const TopEpisodesContainer = ({allEpisodes}) => {
