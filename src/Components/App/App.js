@@ -1,6 +1,6 @@
 import './App.css';
 import logo from '../../images/barts-binge-logo.png';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllEpisodes } from '../../apiCalls';
 import EpisodeDetails from '../EpisodeDetails/EpisodeDetails';
@@ -30,7 +30,9 @@ function App() {
   return (
     <main>
       <div className='logo-container'>
-        <img className='barts-logo' src={logo} alt='Barts Binge logo' />
+        <Link to={'/'}>
+          <img className='barts-logo' src={logo} alt='Barts Binge logo' />
+        </Link>
       </div>
       <Routes>
         <Route path='/' element={loading ? <EmptyState/> : <TopEpisodesContainer allEpisodes={episodes} />} />
