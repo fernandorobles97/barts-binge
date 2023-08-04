@@ -12,7 +12,7 @@ describe('episode details spec', () => {
     })
   })
 
-  it('should display a selected episodes details and update the URL with the episode ID', () => {
+  it('should display a selected episodes details and update the URL with the episode ID and return to all episodes when the button is clicked', () => {
     cy.wait(['@getEpisodes']).then((intercept) => {
       cy.url().should('eq', 'http://localhost:3000/allepisodes')
       .get('.episode-card').contains('Bart the General').click()
@@ -23,6 +23,8 @@ describe('episode details spec', () => {
       .get('.episode-rating').contains('Rating: 8.1')
       .get('.episode-airdate').contains('Original Airdate: 1990-02-04')
       .get('.img-container').find('img[alt="Bart the General thumbnail"]')
+      .get('.view-all-button').click()
+      .url().should('eq', 'http://localhost:3000/allepisodes')
     })
 
      
