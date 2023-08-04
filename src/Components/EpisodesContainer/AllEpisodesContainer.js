@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { mapCards } from "../../helpers"
+import PropTypes from 'prop-types'
 
 const AllEpisodesContainer = ({allEpisodes}) => {
   const [seasonNumber, setSeasonNumber] = useState(1) 
@@ -41,3 +42,7 @@ const AllEpisodesContainer = ({allEpisodes}) => {
 }
 
 export default AllEpisodesContainer
+
+AllEpisodesContainer.propTypes = {
+  allEpisodes: PropTypes.array
+}
