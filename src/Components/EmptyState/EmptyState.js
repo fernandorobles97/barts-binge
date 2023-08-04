@@ -12,5 +12,5 @@ const EmptyState = ({errorMessage}) => {
 export default EmptyState
 
 EmptyState.propTypes = {
-  errorMessage: PropTypes.string.isRequired
+  errorMessage: PropTypes.string
 }

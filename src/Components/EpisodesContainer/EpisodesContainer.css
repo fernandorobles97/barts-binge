@@ -16,7 +16,7 @@
 }
 
 .container-header {
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bold;
 }
 
@@ -34,4 +34,33 @@
   justify-content: space-evenly;
   align-items: center;
   width: 80%;
+}
+
+@media screen and (max-width: 950px) {
+  .buttons-header-wrapper {
+    flex-direction: column;
+  }
+
+  .container-header {
+    font-size: 65px;
+    margin: 30px;
+  }
+
+  .view-all-button, .reroll-button, .filter-seasons{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .buttons-header-wrapper {
+    flex-direction: column;
+  }
+
+  .container-header {
+    font-size: 25px;
+  }
+
+  .view-all-button, .reroll-button, .filter-seasons{
+    font-size: 20px;
+  }
 }
