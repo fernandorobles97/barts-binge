@@ -4,7 +4,7 @@ import { getSingleEpisode } from "../../apiCalls"
 import './EpisodeDetails.css'
 
 const EpisodeDetails = () => {
-  const [currentEpisode, setCurrentEpisode] = useState(0)
+  const [currentEpisode, setCurrentEpisode] = useState({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const location = useLocation().pathname.split('/episode/')[1]
