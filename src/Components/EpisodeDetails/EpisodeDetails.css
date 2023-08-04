@@ -24,3 +24,39 @@
   display: flex;
   height: 30vh;
 }
+
+.episode-header-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+
+
+@media screen and (max-width: 900px) {
+  p {
+  font-size: 12px;
+  }
+
+  .episode-header-wrapper {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .episode-details-container {
+    flex-direction: column-reverse;
+  }
+
+  .details-wrapper {
+    width: 40vh;
+    height: 45vh;
+  }
+
+  .img-container {
+    height: 20vh;
+  }
+
+  .container-header {
+    margin: 15px
+  }
+}

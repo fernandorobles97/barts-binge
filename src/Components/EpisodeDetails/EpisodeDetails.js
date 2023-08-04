@@ -26,7 +26,7 @@ const EpisodeDetails = () => {
     <div className="episode-content">
       {!loading &&
         <section>
-          <div className='buttons-header-wrapper'>
+          <div className='episode-header-wrapper'>
             <h2 className='container-header'>{currentEpisode.name}</h2>
             <Link className='view-all-button' to='/allepisodes' >Back To All Episodes </Link>
           </div>
