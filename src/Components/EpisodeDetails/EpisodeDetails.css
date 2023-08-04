@@ -33,9 +33,9 @@
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 520px) {
   p {
-  font-size: 12px;
+  font-size: 18px;
   }
 
   .episode-header-wrapper {

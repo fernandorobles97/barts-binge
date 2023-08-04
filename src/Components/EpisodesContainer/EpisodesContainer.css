@@ -35,3 +35,18 @@
   align-items: center;
   width: 80%;
 }
+
+
+@media screen and (max-width: 520px) {
+  .buttons-header-wrapper {
+    flex-direction: column;
+  }
+
+  .container-header {
+    font-size: 25px;
+  }
+
+  .view-all-button, .reroll-button, .filter-seasons{
+    font-size: 20px;
+  }
+}
