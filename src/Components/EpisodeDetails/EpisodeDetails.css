@@ -32,6 +32,30 @@
   width: 80%;
 }
 
+@media screen and (max-width: 950px) {
+  p {
+  font-size: 28px;
+  }
+
+  .episode-header-wrapper {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .episode-details-container {
+    flex-direction: column-reverse;
+    width: 100vw;
+  }
+
+  .details-wrapper {
+    height: 45vh;
+    width: 60vh;
+  }
+
+  .img-container {
+    height: 20vh;
+  }
+}
 
 @media screen and (max-width: 520px) {
   p {
