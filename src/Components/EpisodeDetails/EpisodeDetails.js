@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { getSingleEpisode } from "../../apiCalls"
 import './EpisodeDetails.css'
+import EmptyState from "../EmptyState/EmptyState"
 
 const EpisodeDetails = () => {
   const [currentEpisode, setCurrentEpisode] = useState({})
@@ -24,7 +25,8 @@ const EpisodeDetails = () => {
 
   return(  
     <div className="episode-content">
-      {!loading &&
+      {error && <EmptyState errorMessage={error.message} />}
+      {!loading && !error &&
         <section>
           <div className='episode-header-wrapper'>
             <h2 className='container-header'>{currentEpisode.name}</h2>
@@ -42,7 +44,7 @@ const EpisodeDetails = () => {
               <img src={currentEpisode.thumbnailUrl} alt={`${currentEpisode.name} thumbnail`} />
             </div>
           </div>
-        </section>
+        </section> 
       } 
     </div>
   )
