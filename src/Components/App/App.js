@@ -38,8 +38,8 @@ function App() {
         <Route path='/' element={loading ? <EmptyState/> : <TopEpisodesContainer allEpisodes={episodes} />} />
         <Route path='/allepisodes' element={<AllEpisodesContainer allEpisodes={episodes} />} />
         <Route path='/episode/:id' element={<EpisodeDetails />} />
-        <Route path='/allepisodes/*' element={<EmptyState />} />
-        <Route path='/*' element={<EmptyState />} />
+        <Route path='/allepisodes/*' element={<EmptyState errorMessage={'This page does not exist, please go back!'} />} />
+        <Route path='/*' element={<EmptyState errorMessage={'This page does not exist, please go back!'} />} />
       </Routes>
     </main>
   );
