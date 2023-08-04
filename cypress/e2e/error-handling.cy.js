@@ -13,5 +13,14 @@ describe('error handling spec', () => {
     cy.wait('@interceptError').then((intercept) => {
       cy.get('h2').contains('Error: 500 -- Please try again!')
     })
+  }
+  )
+
+  it('shoud display a message for a 404 error', () => {
+    interceptData(404)
+    cy.wait('@interceptError').then((intercept) => {
+      cy.get('h2').contains('Error: 404 -- Please try again!')
+    })
   })
+
 })
