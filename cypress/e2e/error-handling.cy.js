@@ -23,4 +23,12 @@ describe('error handling spec', () => {
     })
   })
 
+  it('should display message when a wrong URL in inputed', () => {
+    interceptData(200)
+    cy.visit('http://localhost:3000/nonsense')
+    cy.wait('@interceptError').then((interception) => { 
+      cy.get('h2').contains('This page does not exist, please go back!')
+    })
+  })  
+
 })
