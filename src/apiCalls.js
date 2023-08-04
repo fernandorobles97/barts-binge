@@ -11,4 +11,10 @@ const getAllEpisodes = async() => {
   return data
 }
 
-export {getAllEpisodes}
+const getSingleEpisode = async(id) => {
+  let response = await fetch(`https://api.sampleapis.com/simpsons/episodes/${id}`)
+  let data = await (handleError(response))
+  return data
+}
+
+export {getAllEpisodes, getSingleEpisode}
