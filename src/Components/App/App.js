@@ -35,7 +35,7 @@ function App() {
         </Link>
       </div>
       <Routes>
-        <Route path='/' element={loading ? <EmptyState/> : <TopEpisodesContainer allEpisodes={episodes} />} />
+        <Route path='/' element={loading ? <EmptyState/> : error ? <EmptyState errorMessage={error.message} /> : <TopEpisodesContainer allEpisodes={episodes} />} />
         <Route path='/allepisodes' element={<AllEpisodesContainer allEpisodes={episodes} />} />
         <Route path='/episode/:id' element={<EpisodeDetails />} />
         <Route path='/allepisodes/*' element={<EmptyState errorMessage={'This page does not exist, please go back!'} />} />
