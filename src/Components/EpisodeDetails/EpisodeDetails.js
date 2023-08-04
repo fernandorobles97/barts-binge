@@ -32,11 +32,11 @@ const EpisodeDetails = () => {
           </div>
           <div className="episode-details-container">
             <div className="details-wrapper">
-              <p>Season: {currentEpisode.season}</p>
-              <p>Episode: {currentEpisode.episode}</p>
-              <p>Description: {currentEpisode.description}</p>
-              <p>Rating: {currentEpisode.rating}</p>
-              <p>Original Airdate: {currentEpisode.airDate.slice(0, 10)}</p>
+              <p className="episode-season">Season: {currentEpisode.season}</p>
+              <p className="episode-number">Episode: {currentEpisode.episode}</p>
+              <p className="episode-description">Description: {currentEpisode.description}</p>
+              <p className="episode-rating">Rating: {currentEpisode.rating}</p>
+              <p className="episode-airdate">Original Airdate: {currentEpisode.airDate.slice(0, 10)}</p>
             </div>
             <div className="img-container">
               <img src={currentEpisode.thumbnailUrl} alt={`${currentEpisode.name} thumbnail`} />
