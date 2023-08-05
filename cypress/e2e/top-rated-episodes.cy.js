@@ -28,11 +28,23 @@ describe('top rated episodes spec', () => {
         episodeName1 = episode.text()
         cy.get('.reroll-button').click()
         cy.get('.episode-name')['first']().should('not.equal', episodeName1)
+        cy.get('.episodes-wrapper').each(() => {
+          cy.get('.episode-rating').invoke('text').then((text) => {
+            let ratingNumber = text.split(' ')[1]
+            return ratingNumber
+          }).then(parseFloat).should('be.gte', 8)
+        })
       })
       cy.get('.episode-name')['last']().then((episode) => {
         episodeName2 = episode.text()
         cy.get('.reroll-button').click()
         cy.get('.episode-name')['last']().should('not.equal', episodeName2)
+        cy.get('.episodes-wrapper').each(() => {
+          cy.get('.episode-rating').invoke('text').then((text) => {
+            let ratingNumber = text.split(' ')[1]
+            return ratingNumber
+          }).then(parseFloat).should('be.gte', 8)
+        })
       })
     })
   })
