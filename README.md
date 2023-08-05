@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+<div align="center">
+<h1> BART'S BINGE </h1>
+Browse an archive of The Simpsons Season 1-10 episodes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[DEPLOYED LINK](https://barts-binge.vercel.app/)
 
-## Available Scripts
+Technologies used:<br>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" />
+  <br>
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+</div>
 
-In the project directory, you can run:
+## Abstract: 
+This app displays top-rated episode on the home page. A user can reroll these episodes to see different episodes with ratings greater than 8. The user can view all episodes and filter them by season. The user can click on any episode to see it's details.
 
-### `npm start`
+# Preview of App:
+ <div align='center'> 
+  <h2>Reroll and view an episode's details </h2>
+  <img src="https://user-images.githubusercontent.com/123911055/258612185-d4bd0618-9273-4929-87e7-a62dbacd3b2d.gif" alt='gif of searching and filtering' />
+  <h2>Filter all episodes by season</h2>
+  <img src='https://user-images.githubusercontent.com/123911055/258612390-1cadc517-bb40-4d31-9a71-582190292fae.gif' alt='gif of saving and unsaving an item'>
+ </div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Instructions:
+- Fork [this](https://github.com/fernandorobles97/barts-binge) repository. 
+- Clone it to your local machine using the command: `git clone git@github.com:fernandorobles97/barts-binge.git`.
+- Run the command: `cd barts-binge`
+- Run the command: `npm install`
+- Run the command: `npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Context:
+- I am currently enrolled in the seven month long Front End Engineering program at Turing School of Software and Design. This project was created during the third module of the program, which has a total of four modules. 
 
-### `npm test`
+## Contributors:
+- [Fernando Robles](https://github.com/fernandorobles97)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Learning Goals:
+- Increase competency with React fundamentals
+- Create a user interface that is easy to use and clearly displays information
+- Write DRY, reusable code that follows SRP and trends toward function purity
+- Make network requests (using fetch API)
+- Test React components & asynchronous JS with Cypress
+- Create a multi-page UX using Router
