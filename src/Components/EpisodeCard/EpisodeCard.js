@@ -7,7 +7,7 @@ const EpisodeCard = ({ id, season, episode, name, rating, thumbnailUrl, }) => {
   return (
     <Link to={`/episode/${id}`} className='episode-card'>
       <img src={thumbnailUrl} alt={`${name} thumbnail`} />
-      <h3>{name}</h3>
+      <h3 className='episode-name'>{name}</h3>
       <div className='card-details'>  
         <p>Season: {season}</p>
         <p>Episode: {episode}</p>
