@@ -30,7 +30,7 @@ const EpisodeDetails = () => {
         <section>
           <div className='episode-header-wrapper'>
             <h2 className='container-header'>{currentEpisode.name}</h2>
-            <Link className='view-all-button' to='/allepisodes' >Back To All Episodes </Link>
+            <Link className='view-all-button' to='/allepisodes' >View All Episodes </Link>
           </div>
           <div className="episode-details-container">
             <div className="details-wrapper">
